@@ -1,368 +1,423 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aakash Bartakke - Portfolio</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Aakash Bartakke | Senior Data Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1a202c; /* Dark background */
-            color: #e2e8f0; /* Light gray text */
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
         }
-        .section-title {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
+        .glass-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60%;
-            height: 3px;
-            background-color: #63b3ed; /* Lighter blue for dark theme */
-            border-radius: 9999px;
+        .glass-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(56, 189, 248, 0.1);
         }
-        .card {
-            background-color: #2d3748; /* Darker card background */
-            border-radius: 0.75rem; /* Rounded corners */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Darker shadow */
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
+        .text-gradient {
+            background: linear-gradient(to right, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .skill-badge {
-            background-color: #4a5568; /* Darker badge background */
-            color: #90cdf4; /* Lighter blue text */
-            padding: 0.35rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.875rem; /* text-sm */
-            font-weight: 500; /* medium */
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-            display: inline-block;
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            transition: transform 0.2s;
         }
-        .project-item {
-            border-left: 4px solid #63b3ed; /* Lighter blue border */
-            padding-left: 1rem;
-            margin-bottom: 1.5rem;
+        .btn-primary:hover {
+            transform: scale(1.05);
         }
-        .experience-item {
-            border-left: 4px solid #63b3ed; /* Lighter blue border */
-            padding-left: 1rem;
-            margin-bottom: 1.5rem;
+        .hero-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 40px 40px;
         }
-        .footer-link {
-            transition: color 0.2s ease-in-out;
+        .timeline-border {
+            border-left: 2px solid rgba(56, 189, 248, 0.3);
         }
-        .footer-link:hover {
-            color: #90cdf4; /* Lighter blue on hover */
-        }
-        /* Custom styles for profile image */
-        .profile-image-container {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid #63b3ed; /* Lighter blue border */
-            box-shadow: 0 0 15px rgba(99, 179, 237, 0.5); /* Glowing effect */
-        }
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .badge-tech {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: #94a3b8;
         }
     </style>
 </head>
-<body class="antialiased">
-    <!-- Header/Navigation -->
-    <header class="bg-gradient-to-r from-gray-900 to-gray-700 text-white p-6 shadow-lg rounded-b-xl">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <h1 class="text-4xl font-extrabold mb-4 md:mb-0">Aakash Bartakke</h1>
-            <nav>
-                <ul class="flex space-x-6 text-lg font-medium">
-                    <li><a href="#about" class="hover:text-gray-300 transition duration-300">About</a></li>
-                    <li><a href="#skills" class="hover:text-gray-300 transition duration-300">Skills</a></li>
-                    <li><a href="#experience" class="hover:text-gray-300 transition duration-300">Experience</a></li>
-                    <li><a href="#projects" class="hover:text-gray-300 transition duration-300">Projects</a></li>
-                    <li><a href="#education" class="hover:text-gray-300 transition duration-300">Education</a></li>
-                    <li><a href="#contact" class="hover:text-gray-300 transition duration-300">Contact</a></li>
-                </ul>
-            </nav>
+<body class="antialiased selection:bg-blue-500/30">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 bg-slate-950/80 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tighter text-gradient">AAKASH.B</span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Tech Stack</a>
+                <a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+            <a href="mailto:aakashbartakke21@gmail.com" class="hidden md:block px-5 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-semibold hover:bg-white/10 transition-all">Get in Touch</a>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="bg-gray-800 text-white py-16 text-center shadow-inner">
-        <div class="container mx-auto flex flex-col items-center">
-            <div class="profile-image-container mb-6">
-                <!-- Placeholder for your profile image -->
-                <img src="https://placehold.co/150x150/2d3748/e2e8f0?text=AB" alt="Aakash Bartakke" class="profile-image">
+    <section class="relative min-h-screen flex items-center justify-center pt-20 hero-pattern">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/50 to-slate-950"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="mb-8 inline-block p-1 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+                <div class="bg-slate-950 rounded-full p-1 overflow-hidden w-32 h-32 md:w-40 md:h-40 mx-auto">
+                    <img src="https://placehold.co/400x400/0f172a/38bdf8?text=AB" alt="Aakash Bartakke" class="w-full h-full object-cover rounded-full">
+                </div>
             </div>
-            <h2 class="text-5xl font-extrabold mb-4">Hi, I'm Aakash Bartakke</h2>
-            <p class="text-2xl font-light text-gray-300 mb-8">Data Engineer & AI Enthusiast</p>
-            <div class="flex space-x-4">
-                <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">View My Work</a>
-                <a href="Resume_Aakash_Bartakke.pdf" download class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">
-					<i class="fas fa-download mr-2"></i>Download Resume
-				</a>
-				<a href="#contact" class="bg-transparent border-2 border-white hover:border-blue-300 text-white font-bold py-3 px-8 rounded-full transition duration-300">Contact Me</a>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+                Hi, I'm <span class="text-gradient">Aakash Bartakke</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto mb-10 font-light leading-relaxed">
+                Senior Data Engineer building production-grade <span class="text-white font-medium">Lakehouse Architecture</span> and scalable data pipelines to drive business intelligence.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#projects" class="btn-primary w-full sm:w-auto px-8 py-4 rounded-xl font-bold shadow-lg shadow-blue-500/20 text-white">View Projects</a>
+                <a href="Resume_Aakash_Bartakke.pdf" download class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold border border-white/10 bg-white/5 hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                    <i class="fas fa-file-download text-blue-400"></i> Download Resume
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8 mt-8">
+    <!-- Stats Row -->
+    <section class="py-12 bg-slate-950">
+        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="text-4xl font-bold text-blue-400">3.5+</div>
+                <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">Years Experience</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-bold text-green-400">€0.1M</div>
+                <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">Profit Contribution</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-bold text-purple-400">60%</div>
+                <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">ETL Speedup</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-bold text-pink-400">14%</div>
+                <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">Tax Savings</div>
+            </div>
+        </div>
+    </section>
 
-        <!-- About Me Section -->
-        <section id="about" class="mb-12">
-            <h2 class="text-3xl font-bold section-title">About Me</h2>
-            <div class="card">
-                <p class="text-lg leading-relaxed text-gray-200">
-                    Hello! I'm Aakash Deepak Bartakke, a passionate and results-driven Senior Data Engineer with a Master of Science in Computer Science, specializing in Artificial Intelligence. With a strong background in designing and optimizing ETL pipelines, data warehousing, and developing data-driven solutions, I am adept at transforming complex data into actionable insights. My experience spans across various domains, including supply chain management and environmental sustainability, where I've consistently delivered impactful projects leading to significant cost savings and profit generation. I am enthusiastic about leveraging my skills in Python, SQL, and cloud technologies (AWS, Azure, Apache Kafka) to build scalable and efficient data systems.
+    <main class="container mx-auto px-6 py-20 space-y-32">
+        
+        <!-- About & Current Focus -->
+        <section id="about" class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl font-bold mb-6 flex items-center gap-3 text-white">
+                    <span class="w-8 h-1 bg-blue-500 rounded-full"></span>
+                    Professional Summary
+                </h2>
+                <p class="text-lg text-slate-400 leading-relaxed mb-6">
+                    A passionate and results-driven Senior Data Engineer with a Master's in Computer Science (AI Track). I specialize in transforming complex raw data into actionable enterprise insights through <span class="text-white">optimized ETL/ELT pipelines</span> and cloud data warehousing.
+                </p>
+                <p class="text-lg text-slate-400 leading-relaxed">
+                    My background spans supply chain information management and environmental sustainability, consistently delivering scalable, efficient data systems that save costs and generate profit.
                 </p>
             </div>
+            <div class="glass-card p-8 rounded-2xl relative border-blue-500/20">
+                <h3 class="text-xl font-bold mb-4 text-gradient">Current Focus</h3>
+                <ul class="space-y-4 text-sm md:text-base">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-layer-group mt-1 text-blue-400"></i>
+                        <span>Medallion Architecture (Bronze-Silver-Gold) in <span class="text-white font-medium">Databricks & Snowflake</span>.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-bolt mt-1 text-yellow-400"></i>
+                        <span>Production-grade real-time ingestion with <span class="text-white font-medium">Apache Kafka & Snowpipe</span>.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-shield-alt mt-1 text-green-400"></i>
+                        <span>Incremental, idempotent, and backfill-friendly data processing.</span>
+                    </li>
+                </ul>
+            </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="mb-12">
-            <h2 class="text-3xl font-bold section-title">Technical Skills</h2>
-            <div class="card">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3 text-gray-300"><i class="fas fa-code text-blue-400 mr-2"></i>Programming Languages:</h3>
-                        <div class="flex flex-wrap">
-                            <span class="skill-badge">Python</span>
-                            <span class="skill-badge">SQL</span>
-                            <span class="skill-badge">Java</span>
-                        </div>
+        <!-- Tech Stack -->
+        <section id="skills">
+            <h2 class="text-3xl font-bold mb-12 text-center text-white">Enterprise Tech Stack</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Data Engineering -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h4 class="text-blue-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-server"></i> Big Data & Processing</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge-tech">Apache Spark</span>
+                        <span class="badge-tech">PySpark</span>
+                        <span class="badge-tech">Databricks</span>
+                        <span class="badge-tech">Apache Kafka</span>
+                        <span class="badge-tech">Confluent Kafka</span>
+                        <span class="badge-tech">Apache Airflow</span>
+                        <span class="badge-tech">Delta Lake</span>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3 text-gray-300"><i class="fas fa-cloud text-blue-400 mr-2"></i>Cloud & Big Data:</h3>
-                        <div class="flex flex-wrap">
-                            <span class="skill-badge">AWS (EC2, DynamoDB)</span>
-                            <span class="skill-badge">Azure (Data Factory, Data Lake, SQL)</span>
-                            <span class="skill-badge">Apache Kafka</span>
-                            <span class="skill-badge">Apache Airflow</span>
-                        </div>
+                </div>
+
+                <!-- Warehousing & DB -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h4 class="text-purple-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-warehouse"></i> Warehousing & DB</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge-tech">Snowflake</span>
+                        <span class="badge-tech">Azure SQL</span>
+                        <span class="badge-tech">SSIS / SSMS</span>
+                        <span class="badge-tech">DynamoDB</span>
+                        <span class="badge-tech">Data Warehousing</span>
+                        <span class="badge-tech">SQL Server</span>
+                        <span class="badge-tech">Data Pipeline Optimization</span>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3 text-gray-300"><i class="fas fa-database text-blue-400 mr-2"></i>Database & Analytics:</h3>
-                        <div class="flex flex-wrap">
-                            <span class="skill-badge">SSIS</span>
-                            <span class="skill-badge">SSMS</span>
-                            <span class="skill-badge">Power BI</span>
-                            <span class="skill-badge">Azure SQL</span>
-                        </div>
+                </div>
+
+                <!-- Cloud & Infrastructure -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h4 class="text-orange-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-cloud"></i> Cloud & Infrastructure</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge-tech">AWS (EC2, S3, DynamoDB)</span>
+                        <span class="badge-tech">Azure Data Factory</span>
+                        <span class="badge-tech">Azure Data Lake</span>
+                        <span class="badge-tech">Snowpipe / Streams</span>
+                        <span class="badge-tech">ETL Development</span>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3 text-gray-300"><i class="fas fa-tools text-blue-400 mr-2"></i>Tools & Platforms:</h3>
-                        <div class="flex flex-wrap">
-                            <span class="skill-badge">Git</span>
-                            <span class="skill-badge">GitHub</span>
-                            <span class="skill-badge">Visual Studio Code</span>
-                            <span class="skill-badge">Jupyter Notebook</span>
-                            <span class="skill-badge">ServiceNow</span>
-                            <span class="skill-badge">Jira</span>
-                        </div>
+                </div>
+
+                <!-- Languages & Libraries -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h4 class="text-green-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-code"></i> Languages & Libraries</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge-tech">Python</span>
+                        <span class="badge-tech">SQL</span>
+                        <span class="badge-tech">Java</span>
+                        <span class="badge-tech">Pandas</span>
+                        <span class="badge-tech">NumPy</span>
+                        <span class="badge-tech">Boto3</span>
+                        <span class="badge-tech">Multiprocessing</span>
                     </div>
-					<div>
-                        <h3 class="text-xl font-semibold mb-3 text-gray-300"><i class="fas fa-cubes text-blue-400 mr-2"></i>Libraries and Modules:</h3>
-                        <div class="flex flex-wrap">
-                            <span class="skill-badge">Pandas</span>
-                            <span class="skill-badge">Numpy</span>
-                            <span class="skill-badge">Confluent Kafka</span>
-                            <span class="skill-badge">Boto3</span>
-                            <span class="skill-badge">Multiprocessing</span>
-                        </div>
+                </div>
+
+                <!-- Analytics & Core Tools -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h4 class="text-pink-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-tools"></i> Analytics & Tools</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge-tech">Power BI</span>
+                        <span class="badge-tech">Git / GitHub</span>
+                        <span class="badge-tech">VS Code</span>
+                        <span class="badge-tech">Jupyter Notebook</span>
+                        <span class="badge-tech">ServiceNow</span>
+                        <span class="badge-tech">Jira</span>
+                        <span class="badge-tech">Docker</span>
                     </div>
-					<div>
-                        <h3 class="text-xl font-semibold mb-3 text-gray-300"><i class="fas fa-lightbulb text-blue-400 mr-2"></i>Concepts & Methodologies:</h3>
-                        <div class="flex flex-wrap">
-                            <span class="skill-badge">Data Warehousing</span>
-                            <span class="skill-badge">ETL Development</span>
-                            <span class="skill-badge">Data Pipeline Optimization</span>
-                            <span class="skill-badge">Data Visualization</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3 text-gray-300"><i class="fas fa-laptop text-blue-400 mr-2"></i>Operating Systems:</h3>
-                        <div class="flex flex-wrap">
-                            <span class="skill-badge">Linux</span>
-                            <span class="skill-badge">Windows</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3 text-gray-300"><i class="fas fa-certificate text-blue-400 mr-2"></i>Certifications:</h3>
-                        <div class="flex flex-wrap">
-                            <span class="skill-badge">Microsoft AZ-900 Azure Fundamentals Certification</span>
-                        </div>
+                </div>
+
+                <!-- Certifications & OS -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h4 class="text-yellow-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-certificate"></i> Certifications & OS</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge-tech text-yellow-200">Microsoft AZ-900 Certification</span>
+                        <span class="badge-tech">Linux</span>
+                        <span class="badge-tech">Windows</span>
+                        <span class="badge-tech">Data Visualization</span>
+                        
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="mb-12">
-            <h2 class="text-3xl font-bold section-title">Experience</h2>
-            <div class="card">
-                <!-- LTIMINDTREE -->
-                <div class="experience-item">
-                    <h3 class="text-2xl font-semibold text-gray-200">Senior Data Engineer</h3>
-                    <p class="text-lg text-gray-400">LTIMINDTREE | Pune, India | Dec 2020 – June 2024</p>
-                    <ul class="list-disc list-inside mt-2 space-y-2 text-gray-300">
-                        <li>
-                            <span class="font-bold text-yellow-300">Inventory Utilization Tracker:</span> Spearheaded this project, contributing to <span class="font-bold text-green-400">€0.1 million profit</span> in the first financial year. Designed data warehouses, end-to-end ETL pipelines, and Power BI reports for comprehensive Supply Chain Information Management. Created SQL views and stored procedures for metric calculations and KPI feeding. Executed end-to-end data validation and integrity testing.
+        <!-- Experience Timeline -->
+        <section id="experience">
+            <h2 class="text-3xl font-bold mb-12 text-white">Professional Journey</h2>
+            <div class="space-y-16">
+                <!-- Research Assistant -->
+                <div class="relative pl-10 timeline-border">
+                    <div class="absolute -left-[11px] top-0 w-5 h-5 bg-blue-500 rounded-full border-4 border-slate-950"></div>
+                    <div class="flex flex-col md:flex-row justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Research Assistant</h3>
+                            <p class="text-blue-400 font-medium">Binghamton University | Binghamton, NY</p>
+                        </div>
+                        <span class="text-slate-500 font-medium mt-1">Dec 2024 – Present</span>
+                    </div>
+                    <ul class="grid md:grid-cols-2 gap-4 text-slate-400 text-sm">
+                        <li class="glass-card p-4 rounded-xl flex gap-3">
+                            <i class="fas fa-microchip text-blue-400"></i>
+                            <span>Developing data acquisition software for units to collect sensor data for processor thermal cooling tests.</span>
                         </li>
-                        <li>
-                            <span class="font-bold text-yellow-300">Application Service Delivery:</span> Optimized heavy ETL pipelines, reducing runtimes by up to <span class="font-bold text-green-400">60%</span> to ensure timely data delivery and cost efficiency. Implemented data cleansing, event logging, and flow monitoring within ETL processes, automating workflows to minimize manual effort and human error. Provided client support, performed bug fixes, and developed new features, maintaining <span class="font-bold text-green-400">100% SLA adherence</span>. Documented solutions by drafting knowledge base articles, Root Cause Analysis (RCA) documents, and workflow diagrams.
+                        <li class="glass-card p-4 rounded-xl flex gap-3">
+                            <i class="fas fa-network-wired text-blue-400"></i>
+                            <span>Managing device integration: verifying/assigning MAC addresses and ensuring DHCP protocol compliance.</span>
                         </li>
-                        <li>
-                            <span class="font-bold text-yellow-300">Environment Sustainability Governance Report:</span> Developed a tool enabling business stakeholders to calculate waste from manufacturing and product usage, facilitating tax savings. Built ETL pipelines to integrate data from diverse sources for comprehensive reporting. Engineered SQL-based business logic and calculations to create new measures, enhancing client data analysis. This project resulted in a <span class="font-bold text-green-400">14% reduction in payable taxes</span> for the company.
+                        <li class="glass-card p-4 rounded-xl flex gap-3">
+                            <i class="fas fa-box text-blue-400"></i>
+                            <span>Comprehensive inventory management and rack building (processors, cooling mechanisms, and sensors).</span>
+                        </li>
+                        <li class="glass-card p-4 rounded-xl flex gap-3">
+                            <i class="fas fa-stream text-blue-400"></i>
+                            <span>Streaming sensor data solutions using Apache Kafka and Python.</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Binghamton University - Research Assistant -->
-                <div class="experience-item mt-6">
-                    <h3 class="text-2xl font-semibold text-gray-200">Research Assistant</h3>
-                    <p class="text-lg text-gray-400">Binghamton University | Binghamton, New York | Dec 2024 – Present</p>
-                    <ul class="list-disc list-inside mt-2 space-y-2 text-gray-300">
-                        <li>Developed a data streaming solution using Apache Kafka and Python to transmit thermal cooling test data.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="mb-10">
-            <h2 class="text-3xl font-bold section-title">Projects</h2>
-            <div class="card grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Product Sale Dataflow pipeline -->
-                <div class="project-item flex flex-col">
-					<!-- <img src="https://placehold.co/400x250/4a5568/e2e8f0?text=Project+Image" -->
-                    <img src="HLD.png" alt="Product Sale Dataflow Pipeline" class="w-full h-auto rounded-lg mb-4 shadow-md">
-                    <h3 class="text-2xl font-semibold text-gray-200 mb-2">Product Sale Dataflow Pipeline (Independent Project)</h3>
-                    <p class="text-lg text-gray-400 mb-3">Technologies: Apache Kafka, AWS EC2, AWS DynamoDB, Apache Airflow</p>
-                    <ul class="list-disc list-inside mt-2 space-y-2 text-gray-300 flex-grow">
-                        <li>Engineered a scalable ELT pipeline using Apache Kafka and AWS EC2 to stream millions of product sale records daily in real-time.</li>
-                        <li>Implemented a cost-effective solution utilizing AWS DynamoDB, achieving <span class="font-bold text-green-400">less than $4 daily cost</span>.</li>
-                        <li>Orchestrated data flows with Apache Airflow for robust scheduling and monitoring.</li>
-                    </ul>
-                    <div class="mt-4">
-                        <a href="https://github.com/adb-21/DE-Project1" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300"><i class="fas fa-code mr-2"></i>Code Demo</a>
+                <!-- LTIMindtree -->
+                <div class="relative pl-10 timeline-border">
+                    <div class="absolute -left-[11px] top-0 w-5 h-5 bg-slate-700 rounded-full border-4 border-slate-950"></div>
+                    <div class="flex flex-col md:flex-row justify-between mb-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Senior Data Engineer</h3>
+                            <p class="text-slate-400 font-medium">LTIMINDTREE | Pune, India</p>
+                        </div>
+                        <span class="text-slate-500 font-medium mt-1">Dec 2020 – June 2024</span>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <!-- Project 1 -->
+                        <div class="glass-card p-6 rounded-2xl border-l-4 border-green-500">
+                            <h4 class="text-lg font-bold text-white mb-2">Inventory Utilization Tracker</h4>
+                            <p class="text-slate-400 text-sm mb-4">Spearheaded the tracker contributing to <span class="text-green-400 font-bold">€0.1 million profit</span> in the first year.</p>
+                            <ul class="list-disc list-inside text-xs text-slate-500 space-y-1">
+                                <li>Designed end-to-end ETL pipelines and Power BI reports for supply chain management.</li>
+                                <li>Developed SQL views/procedures for metric calculations and KPI feeding.</li>
+                            </ul>
+                        </div>
+                        <!-- Project 2 -->
+                        <div class="glass-card p-6 rounded-2xl border-l-4 border-blue-500">
+                            <h4 class="text-lg font-bold text-white mb-2">Application Service Delivery</h4>
+                            <p class="text-slate-400 text-sm mb-4">Optimized heavy ETL pipelines, reducing runtimes by <span class="text-blue-400 font-bold">60%</span> for timely delivery.</p>
+                            <ul class="list-disc list-inside text-xs text-slate-500 space-y-1">
+                                <li>Automated workflows with cleansing, event logging, and flow monitoring.</li>
+                                <li>Maintained 100% SLA adherence through bug fixes and feature development.</li>
+                            </ul>
+                        </div>
+                        <!-- Project 3 -->
+                        <div class="glass-card p-6 rounded-2xl border-l-4 border-purple-500">
+                            <h4 class="text-lg font-bold text-white mb-2">Environment Sustainability Governance</h4>
+                            <p class="text-slate-400 text-sm mb-4">Facilitated a <span class="text-purple-400 font-bold">14% reduction in payable taxes</span> via waste calculation tools.</p>
+                            <ul class="list-disc list-inside text-xs text-slate-500 space-y-1">
+                                <li>Built ETL pipelines integrating diverse sources for sustainability reporting.</li>
+                                <li>Engineered SQL business logic for complex waste calculation measures.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-				
-                <!-- Leadership and Involvement Projects -->
-				
-                <div class="project-item flex flex-col">
-                    <img src="Leadership and involvement.png" alt="Leadership and Involvement" class="w-full h-auto rounded-lg mb-4 shadow-md">
-                    <h3 class="text-2xl font-semibold text-gray-200 mb-2">Leadership and Involvement</h3>
-                    <p class="text-lg text-gray-400 mb-3">Various initiatives</p>
-                    <ul class="list-disc list-inside mt-2 space-y-2 text-gray-300 flex-grow">
-                        <li>Led a final-year undergraduate project, developing a blockchain-supported solution to address traditional data management system issues (August 2019 – June 2020).</li>
-                        <li>Organized and conducted workshops on project lifecycle demonstrations for junior employees, enhancing project management skills (May 2022).</li>
-                        <li>Arranged workshops on SSIS (SQL Server Integration Services) for junior employees, enhancing their proficiency in data integration (Jul 2022).</li>
-                    </ul>
+            </div>
+        </section>
 
+        <!-- Projects Showcase -->
+        <section id="projects">
+            <h2 class="text-3xl font-bold mb-12 text-center text-white">Engineering Portfolios</h2>
+            <div class="space-y-12">
+                <!-- Project 1: NYC Taxi -->
+                <div class="glass-card rounded-3xl overflow-hidden grid md:grid-cols-5 items-center">
+                    <div class="md:col-span-3 p-4 bg-slate-900/50 flex items-center justify-center min-h-[300px]">
+                        <div class="text-center p-6 border border-white/5 rounded-2xl bg-slate-900">
+                            <h4 class="text-xs uppercase tracking-[0.2em] text-blue-500 font-bold mb-6 italic">Architecture Preview</h4>
+                            <div class="flex items-center justify-center gap-4 text-slate-400">
+                                <div class="p-3 border border-slate-700 rounded bg-slate-800">S3</div>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                                <div class="p-3 border border-blue-800 rounded bg-blue-900/20 text-blue-300">Databricks</div>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                                <div class="p-3 border border-purple-800 rounded bg-purple-900/20 text-purple-300">Snowflake</div>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                                <div class="p-3 border border-yellow-800 rounded bg-yellow-900/20 text-yellow-300">Power BI</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 p-8 md:p-12">
+                        <div class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-4">Production-Ready Pipeline</div>
+                        <h3 class="text-3xl font-bold mb-6 text-white">NYC Taxi Analytics Platform</h3>
+                        <p class="text-slate-400 mb-8 leading-relaxed text-sm">
+                            Implementation of a modern <b>Lakehouse architecture</b>. Features incremental date-driven ingestion using Databricks/Spark, automated Snowflake ingestion with <b>Snowpipe</b>, and business-ready dashboards.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="badge-tech">Medallion Arch</span>
+                            <span class="badge-tech">Delta Lake</span>
+                            <span class="badge-tech">Snowflake Streams</span>
+                            <span class="badge-tech">PySpark</span>
+                        </div>
+                        <a href="https://github.com/adb-21/NYC-taxi-analysis" target="_blank" class="text-blue-400 font-bold group flex items-center gap-2">
+                            View Codebase <i class="fas fa-arrow-right transition-transform group-hover:translate-x-2"></i>
+                        </a>
+                    </div>
                 </div>
-				
+
+                <!-- Project 2: Kafka -->
+                <div class="glass-card rounded-3xl overflow-hidden grid md:grid-cols-5 items-center">
+                    <div class="md:col-span-3 p-1">
+                        <div class="bg-slate-900 rounded-2xl p-6 h-full flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="flex justify-center gap-6 mb-8">
+                                    <i class="fab fa-python text-5xl text-blue-400"></i>
+                                    <i class="fas fa-exchange-alt text-3xl text-slate-600 mt-2"></i>
+                                    <i class="fab fa-aws text-5xl text-orange-400"></i>
+                                </div>
+                                <div class="p-4 bg-slate-800 rounded-lg border border-white/5 inline-block">
+                                    <span class="text-xs uppercase tracking-widest text-slate-500">Dataflow Pipeline Architecture</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 p-8 md:p-12">
+                        <div class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-4">Real-time Streaming</div>
+                        <h3 class="text-3xl font-bold mb-6 text-white">Product Sale Dataflow Pipeline</h3>
+                        <p class="text-slate-400 mb-8 leading-relaxed text-sm">
+                            Engineered a scalable ELT pipeline streaming millions of daily records in real-time. Built for efficiency, achieving <span class="text-white">less than $4/day</span> operational cost using AWS DynamoDB.
+                        </p>
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="badge-tech">Kafka</span>
+                            <span class="badge-tech">AWS EC2</span>
+                            <span class="badge-tech">Airflow</span>
+                            <span class="badge-tech">DynamoDB</span>
+                        </div>
+                        <a href="https://github.com/adb-21/DE-Project1" target="_blank" class="text-blue-400 inline-flex items-center gap-2 font-bold group">
+                            View Codebase
+                            <i class="fas fa-arrow-right text-blue-400 group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
-
-        <!-- Education Section -->
-		
-        <section id="education" class="mb-12">
-            <h2 class="text-3xl font-bold section-title">Education</h2>
-			<div class="card grid grid-cols-1 md:grid-cols-1 gap-8">
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto">
-                
-					<div class="card">
-							<h3 class="text-2xl font-semibold text-blue-400 mb-2">Binghamton University, SUNY</h3>
-							<p class="text-lg text-gray-300 mb-1">Master of Science in Computer Science, AI Track</p>
-							<p class="text-gray-400 mb-2">Expected May 2026 | GPA: 3.5</p>
-							<p class="text-gray-400">Relevant Coursework: Data Structures and Algorithms, Machine Learning, Deep Learning</p>
-					</div>
-					
-					<div class="card">
-							<h3 class="text-2xl font-semibold text-blue-400 mb-2">Dr. Babasaheb Ambedkar Technological University</h3>
-							<p class="text-lg text-gray-300 mb-1">Bachelor of Technology in Computer Science</p>
-							<p class="text-gray-400 mb-2">August 2016 - June 2020</p>
-							<p class="text-gray-400">Relevant Coursework: OOP, Data structures, operating systems, Database management systems, Cloud computing</p>
-					</div>
-            </div>
-        </section>
-		
-
 
         <!-- Contact Section -->
-		<!-- 
-        <section id="contact" class="mb-12">
-            <h2 class="text-3xl font-bold section-title">Get in Touch</h2>
-            <div class="card text-center">
-                <p class="text-lg mb-6 text-gray-200">I'm always open to new opportunities and collaborations. Feel free to reach out through the form below or connect with me on social media!</p>
-
-                <form class="max-w-xl mx-auto space-y-6">
-                    <div>
-                        <label for="name" class="block text-left text-gray-300 text-sm font-medium mb-1">Name</label>
-                        <input type="text" id="name" name="name" class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-left text-gray-300 text-sm font-medium mb-1">Email</label>
-                        <input type="email" id="email" name="email" class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Email">
-                    </div>
-                    <div>
-                        <label for="message" class="block text-left text-gray-300 text-sm font-medium mb-1">Message</label>
-                        <textarea id="message" name="message" rows="5" class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Message"></textarea>
-                    </div>
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">Send Message</button>
-                </form>
-
-                <div class="flex justify-center space-x-6 mt-8 text-3xl">
-                    <a href="https://www.linkedin.com/in/aakash-bartakke" target="_blank" class="text-blue-500 hover:text-blue-300 transition duration-300" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/adb-21" target="_blank" class="text-gray-300 hover:text-white transition duration-300" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <section id="contact">
+            <div class="glass-card rounded-[3rem] p-12 text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-blue-500/5 -z-10 blur-[100px]"></div>
+                <h2 class="text-4xl font-extrabold mb-4 text-white">Ready for the next data challenge.</h2>
+                <p class="text-slate-400 text-lg max-w-xl mx-auto mb-10">
+                    Looking to collaborate on production pipelines, cloud migrations, or hardware-aware data systems.
+                </p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="mailto:aakashbartakke21@gmail.com" class="bg-white text-slate-950 px-8 py-4 rounded-2xl font-bold hover:bg-blue-400 transition-colors flex items-center gap-3">
+                        <i class="fas fa-paper-plane"></i> Email Me
+                    </a>
+                    <a href="https://www.linkedin.com/in/aakash-bartakke" target="_blank" class="bg-slate-800 text-white px-8 py-4 rounded-2xl font-bold hover:bg-slate-700 transition-colors flex items-center gap-3">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+                <div class="mt-12 text-slate-500 flex flex-col md:flex-row justify-center gap-8 text-sm">
+                    <span><i class="fas fa-phone mr-2 text-blue-400"></i> (607) 338-8761</span>
+                    <span><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i> Binghamton, NY</span>
                 </div>
             </div>
         </section>
-		-->
-        <!-- Contact Section -->
-        <section id="contact" class="mb-12">
-            <h2 class="text-3xl font-bold section-title">Contact</h2>
-            <div class="card text-center">
-                <p class="text-lg mb-4 text-gray-200">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
-                <div class="flex flex-col items-center space-y-3 text-xl">
-                    <p><i class="fas fa-map-marker-alt text-blue-400 mr-2"></i> Binghamton, NY</p>
-                    <p><i class="fas fa-phone text-blue-400 mr-2"></i> (607) 338-8761</p>
-                    <p><i class="fas fa-envelope text-blue-400 mr-2"></i> <a href="mailto:abartakke@binghamton.edu" class="text-blue-400 hover:underline">abartakke@binghamton.edu</a></p>
-                </div>
-                <div class="flex justify-center space-x-6 mt-6 text-3xl">
-                    <a href="https://www.linkedin.com/in/aakash-bartakke" target="_blank" class="text-blue-500 hover:text-blue-300 transition duration-300" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/adb-21" target="_blank" class="text-gray-300 hover:text-white transition duration-300" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </section>
-
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white p-6 text-center rounded-t-xl mt-12">
-        <div class="container mx-auto">
-            <p>&copy; 2025 Aakash Bartakke. All rights reserved.</p>
-            <div class="flex justify-center space-x-4 mt-2">
-                <a href="https://www.linkedin.com/in/aakash-bartakke" target="_blank" class="footer-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/adb-21" target="_blank" class="footer-link"><i class="fab fa-github"></i> GitHub</a>
-            </div>
-        </div>
+    <footer class="py-10 border-t border-white/5 text-center text-slate-500 text-xs uppercase tracking-widest">
+        <p>&copy; 2025 Aakash Bartakke • Designed for Scalability & Performance</p>
     </footer>
+
 </body>
 </html>
