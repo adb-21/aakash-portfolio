@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aakash Bartakke | Senior Data Engineer</title>
+    <title>Aakash Bartakke | Senior Data Engineer &amp; ML Pipeline Architect</title>
+    <meta name="description" content="Senior Data Engineer with 3.5+ years building production lakehouses, real-time pipelines, and ML systems on Databricks, Snowflake, Kafka and AWS.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
@@ -13,6 +14,7 @@
             background-color: #020617;
             color: #f8fafc;
         }
+        .mono { font-family: 'JetBrains Mono', monospace; }
         .glass-card {
             background: rgba(30, 41, 59, 0.5);
             backdrop-filter: blur(12px);
@@ -26,6 +28,11 @@
         }
         .text-gradient {
             background: linear-gradient(to right, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-ev {
+            background: linear-gradient(to right, #4ade80, #38bdf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -51,6 +58,24 @@
             font-size: 0.75rem;
             color: #94a3b8;
         }
+        .badge-tech-accent {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: #7dd3fc;
+        }
+        .arch-node {
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 1px solid;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .glow-blue { box-shadow: 0 0 40px -10px rgba(56, 189, 248, 0.4); }
+        .glow-green { box-shadow: 0 0 40px -10px rgba(74, 222, 128, 0.3); }
     </style>
 </head>
 <body class="antialiased selection:bg-blue-500/30">
@@ -61,29 +86,45 @@
             <span class="text-xl font-bold tracking-tighter text-gradient">AAKASH.B</span>
             <div class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#education" class="hover:text-blue-400 transition-colors">Education</a>
                 <a href="#skills" class="hover:text-blue-400 transition-colors">Tech Stack</a>
                 <a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a>
                 <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
                 <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
             </div>
-            <a href="mailto:aakashbartakke21@gmail.com" class="hidden md:block px-5 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-semibold hover:bg-white/10 transition-all">Get in Touch</a>
+            <div class="hidden md:flex items-center gap-3">
+                <a href="https://github.com/adb-21" target="_blank" rel="noopener" aria-label="GitHub" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-github text-lg"></i></a>
+                <a href="https://www.linkedin.com/in/aakash-bartakke" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-slate-400 hover:text-blue-400 transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
+                <a href="mailto:aakashbartakke21@gmail.com" class="px-5 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-semibold hover:bg-white/10 transition-all">Get in Touch</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 hero-pattern">
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 hero-pattern">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/50 to-slate-950"></div>
         <div class="container mx-auto px-6 relative z-10 text-center">
-            <div class="mb-8 inline-block p-1 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
-                <div class="bg-slate-950 rounded-full p-1 overflow-hidden w-32 h-32 md:w-40 md:h-40 mx-auto">
-                    <img src="https://placehold.co/400x400/0f172a/38bdf8?text=AB" alt="Aakash Bartakke" class="w-full h-full object-cover rounded-full">
+            <div class="flex justify-center mb-8">
+                <div class="p-1 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 glow-blue">
+                    <div class="bg-slate-950 rounded-full p-1 overflow-hidden w-32 h-32 md:w-40 md:h-40">
+                        <img src="https://placehold.co/400x400/0f172a/38bdf8?text=AB" alt="Aakash Bartakke" class="w-full h-full object-cover rounded-full">
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mb-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-semibold uppercase tracking-widest">
+                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    Open to Data Engineer / ML Platform Roles
                 </div>
             </div>
             <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
                 Hi, I'm <span class="text-gradient">Aakash Bartakke</span>
             </h1>
-            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto mb-10 font-light leading-relaxed">
-                Senior Data Engineer building production-grade <span class="text-white font-medium">Lakehouse Architecture</span> and scalable data pipelines to drive business intelligence.
+            <p class="text-lg md:text-2xl text-slate-300 max-w-4xl mx-auto mb-4 font-light leading-relaxed">
+                Senior Data Engineer architecting <span class="text-white font-medium">production lakehouses</span>, <span class="text-white font-medium">real-time pipelines</span>, and <span class="text-white font-medium">ML-powered analytics</span> at scale.
+            </p>
+            <p class="text-base md:text-lg text-slate-500 max-w-3xl mx-auto mb-10">
+                3.5+ years of moving millions of records, and millions of dollars, at LTIMindtree. Currently pursuing an M.S. in CS (AI Track) at Binghamton University.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#projects" class="btn-primary w-full sm:w-auto px-8 py-4 rounded-xl font-bold shadow-lg shadow-blue-500/20 text-white">View Projects</a>
@@ -91,33 +132,37 @@
                     <i class="fas fa-file-download text-blue-400"></i> Download Resume
                 </a>
             </div>
+            <div class="mt-10 flex justify-center gap-6 text-slate-500">
+                <a href="https://github.com/adb-21" target="_blank" rel="noopener" class="hover:text-white transition-colors flex items-center gap-2 text-sm"><i class="fab fa-github"></i> github.com/adb-21</a>
+                <a href="https://www.linkedin.com/in/aakash-bartakke" target="_blank" rel="noopener" class="hover:text-blue-400 transition-colors flex items-center gap-2 text-sm"><i class="fab fa-linkedin"></i> linkedin.com/in/aakash-bartakke</a>
+            </div>
         </div>
     </section>
 
     <!-- Stats Row -->
-    <section class="py-12 bg-slate-950">
+    <section class="py-12 bg-slate-950 border-y border-white/5">
         <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="text-center">
-                <div class="text-4xl font-bold text-blue-400">3.5+</div>
-                <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">Years Experience</div>
+                <div class="text-4xl font-bold text-blue-400">200M+</div>
+                <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">Records Processed</div>
             </div>
             <div class="text-center">
-                <div class="text-4xl font-bold text-green-400">€0.1M</div>
-                <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">Profit Contribution</div>
+                <div class="text-4xl font-bold text-green-400">$2.2M+</div>
+                <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">Annual Tax Savings</div>
             </div>
             <div class="text-center">
-                <div class="text-4xl font-bold text-purple-400">60%</div>
-                <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">ETL Speedup</div>
+                <div class="text-4xl font-bold text-purple-400">75%</div>
+                <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">ETL Runtime Cut</div>
             </div>
             <div class="text-center">
-                <div class="text-4xl font-bold text-pink-400">14%</div>
-                <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">Tax Savings</div>
+                <div class="text-4xl font-bold text-pink-400">682K+</div>
+                <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">ML Recs Served</div>
             </div>
         </div>
     </section>
 
     <main class="container mx-auto px-6 py-20 space-y-32">
-        
+
         <!-- About & Current Focus -->
         <section id="about" class="grid md:grid-cols-2 gap-16 items-center">
             <div>
@@ -126,10 +171,10 @@
                     Professional Summary
                 </h2>
                 <p class="text-lg text-slate-400 leading-relaxed mb-6">
-                    A passionate and results-driven Senior Data Engineer with a Master's in Computer Science (AI Track). I specialize in transforming complex raw data into actionable enterprise insights through <span class="text-white">optimized ETL/ELT pipelines</span> and cloud data warehousing.
+                    I'm a Senior Data Engineer with <span class="text-white">3.5+ years</span> architecting cross-factory data warehouses, ESG reporting systems, and modern lakehouse platforms. Currently pursuing an <span class="text-white">M.S. in Computer Science (AI Track)</span> at Binghamton University, where I bridge classical data engineering with applied ML.
                 </p>
                 <p class="text-lg text-slate-400 leading-relaxed">
-                    My background spans supply chain information management and environmental sustainability, consistently delivering scalable, efficient data systems that save costs and generate profit.
+                    At LTIMindtree I drove <span class="text-green-400 font-semibold">$110K+ in year-one profit</span> through inventory dashboards, eliminated <span class="text-green-400 font-semibold">$2.2M+ in annual tax liability</span> via ESG reporting, and cut ETL runtimes by 60-75% across 10+ applications serving 200+ business users. Most recently I shipped a production-grade <span class="text-white">EV taxi recommendation engine</span> on top of 200M+ NYC trip records.
                 </p>
             </div>
             <div class="glass-card p-8 rounded-2xl relative border-blue-500/20">
@@ -137,27 +182,59 @@
                 <ul class="space-y-4 text-sm md:text-base">
                     <li class="flex items-start gap-3">
                         <i class="fas fa-layer-group mt-1 text-blue-400"></i>
-                        <span>Medallion Architecture (Bronze-Silver-Gold) in <span class="text-white font-medium">Databricks & Snowflake</span>.</span>
+                        <span>Medallion Architecture (Bronze-Silver-Gold) on <span class="text-white font-medium">Databricks &amp; Snowflake</span> with idempotent, backfill-friendly loads.</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <i class="fas fa-bolt mt-1 text-yellow-400"></i>
-                        <span>Production-grade real-time ingestion with <span class="text-white font-medium">Apache Kafka & Snowpipe</span>.</span>
+                        <span>Real-time ingestion via <span class="text-white font-medium">Apache Kafka, Snowpipe, and Streams</span>.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-brain mt-1 text-purple-400"></i>
+                        <span>Applied ML on top of warehouse data using <span class="text-white font-medium">XGBoost, Spark MLlib, and H3 spatial indexing</span>, served via FastAPI.</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <i class="fas fa-shield-alt mt-1 text-green-400"></i>
-                        <span>Incremental, idempotent, and backfill-friendly data processing.</span>
+                        <span>CI/CD for data via <span class="text-white font-medium">GitHub Actions, dbt, and CDC patterns</span>.</span>
                     </li>
                 </ul>
             </div>
         </section>
 
+        <!-- Education -->
+        <section id="education">
+            <h2 class="text-3xl font-bold mb-12 flex items-center gap-3 text-white">
+                <span class="w-8 h-1 bg-purple-500 rounded-full"></span>
+                Education
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold uppercase tracking-widest text-purple-400">Master's Degree</span>
+                        <span class="text-slate-500 text-xs mono">Aug 2024 – May 2026</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-1">M.S. in Computer Science <span class="text-purple-400">(AI Track)</span></h3>
+                    <p class="text-slate-400 text-sm mb-4">Binghamton University, State University of New York · Binghamton, NY</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">Focused on machine learning, distributed systems, and applied AI for data engineering, bridging warehouse infrastructure with ML serving.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold uppercase tracking-widest text-blue-400">Bachelor's Degree</span>
+                        <span class="text-slate-500 text-xs mono">Aug 2016 – May 2020</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-1">B.Tech in Computer Science</h3>
+                    <p class="text-slate-400 text-sm mb-4">Dr. Babasaheb Ambedkar Technological University · Lonere, India</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">Foundational coursework in algorithms, databases, operating systems, and software engineering, feeding directly into a 3.5-year data engineering career.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Tech Stack -->
         <section id="skills">
-            <h2 class="text-3xl font-bold mb-12 text-center text-white">Enterprise Tech Stack</h2>
+            <h2 class="text-3xl font-bold mb-4 text-center text-white">Enterprise Tech Stack</h2>
+            <p class="text-slate-500 text-center mb-12 max-w-2xl mx-auto">Production-tested across supply chain, ESG, and consumer analytics workloads.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Data Engineering -->
                 <div class="glass-card p-6 rounded-2xl">
-                    <h4 class="text-blue-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-server"></i> Big Data & Processing</h4>
+                    <h4 class="text-blue-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-server"></i> Big Data &amp; Processing</h4>
                     <div class="flex flex-wrap gap-2">
                         <span class="badge-tech">Apache Spark</span>
                         <span class="badge-tech">PySpark</span>
@@ -166,72 +243,104 @@
                         <span class="badge-tech">Confluent Kafka</span>
                         <span class="badge-tech">Apache Airflow</span>
                         <span class="badge-tech">Delta Lake</span>
+                        <span class="badge-tech">dbt</span>
                     </div>
                 </div>
 
-                <!-- Warehousing & DB -->
                 <div class="glass-card p-6 rounded-2xl">
-                    <h4 class="text-purple-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-warehouse"></i> Warehousing & DB</h4>
+                    <h4 class="text-purple-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-warehouse"></i> Warehousing &amp; Modeling</h4>
                     <div class="flex flex-wrap gap-2">
                         <span class="badge-tech">Snowflake</span>
+                        <span class="badge-tech">Snowpipe / Streams / Tasks</span>
                         <span class="badge-tech">Azure SQL</span>
+                        <span class="badge-tech">SQL Server</span>
                         <span class="badge-tech">SSIS / SSMS</span>
                         <span class="badge-tech">DynamoDB</span>
-                        <span class="badge-tech">Data Warehousing</span>
-                        <span class="badge-tech">SQL Server</span>
-                        <span class="badge-tech">Data Pipeline Optimization</span>
+                        <span class="badge-tech">Star Schema</span>
+                        <span class="badge-tech">Snowflake Schema</span>
                     </div>
                 </div>
 
-                <!-- Cloud & Infrastructure -->
                 <div class="glass-card p-6 rounded-2xl">
-                    <h4 class="text-orange-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-cloud"></i> Cloud & Infrastructure</h4>
+                    <h4 class="text-orange-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-cloud"></i> Cloud &amp; Infrastructure</h4>
                     <div class="flex flex-wrap gap-2">
-                        <span class="badge-tech">AWS (EC2, S3, DynamoDB)</span>
+                        <span class="badge-tech">AWS EC2</span>
+                        <span class="badge-tech">AWS S3</span>
+                        <span class="badge-tech">AWS DynamoDB</span>
                         <span class="badge-tech">Azure Data Factory</span>
                         <span class="badge-tech">Azure Data Lake</span>
-                        <span class="badge-tech">Snowpipe / Streams</span>
-                        <span class="badge-tech">ETL Development</span>
+                        <span class="badge-tech">Docker</span>
+                        <span class="badge-tech">GitHub Actions (CI/CD)</span>
                     </div>
                 </div>
 
-                <!-- Languages & Libraries -->
                 <div class="glass-card p-6 rounded-2xl">
-                    <h4 class="text-green-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-code"></i> Languages & Libraries</h4>
+                    <h4 class="text-green-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-code"></i> Languages &amp; Libraries</h4>
                     <div class="flex flex-wrap gap-2">
                         <span class="badge-tech">Python</span>
-                        <span class="badge-tech">SQL</span>
+                        <span class="badge-tech">SQL (T-SQL, Stored Procs)</span>
                         <span class="badge-tech">Java</span>
                         <span class="badge-tech">Pandas</span>
                         <span class="badge-tech">NumPy</span>
                         <span class="badge-tech">Boto3</span>
+                        <span class="badge-tech">FastAPI</span>
                         <span class="badge-tech">Multiprocessing</span>
                     </div>
                 </div>
 
-                <!-- Analytics & Core Tools -->
                 <div class="glass-card p-6 rounded-2xl">
-                    <h4 class="text-pink-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-tools"></i> Analytics & Tools</h4>
+                    <h4 class="text-pink-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-brain"></i> ML &amp; Visualization</h4>
                     <div class="flex flex-wrap gap-2">
+                        <span class="badge-tech">Spark MLlib</span>
+                        <span class="badge-tech">XGBoost</span>
+                        <span class="badge-tech">H3 Spatial Indexing</span>
                         <span class="badge-tech">Power BI</span>
+                        <span class="badge-tech">Streamlit</span>
+                        <span class="badge-tech">PyDeck</span>
+                        <span class="badge-tech">Data Visualization</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h4 class="text-cyan-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-microchip"></i> Hardware &amp; Real-time Systems</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge-tech">PyVISA</span>
+                        <span class="badge-tech">PySide6</span>
+                        <span class="badge-tech">PyQtGraph</span>
+                        <span class="badge-tech">DHCP / MAC Mgmt</span>
+                        <span class="badge-tech">Sensor Data Streaming</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h4 class="text-indigo-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-sitemap"></i> Methodologies</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge-tech">Medallion Architecture</span>
+                        <span class="badge-tech">Incremental Processing</span>
+                        <span class="badge-tech">CDC</span>
+                        <span class="badge-tech">Data Validation</span>
+                        <span class="badge-tech">ETL/ELT Patterns</span>
+                        <span class="badge-tech">Agile / Scrum</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h4 class="text-slate-300 font-bold mb-4 flex items-center gap-2"><i class="fas fa-tools"></i> Dev Tools &amp; OS</h4>
+                    <div class="flex flex-wrap gap-2">
                         <span class="badge-tech">Git / GitHub</span>
                         <span class="badge-tech">VS Code</span>
                         <span class="badge-tech">Jupyter Notebook</span>
                         <span class="badge-tech">ServiceNow</span>
                         <span class="badge-tech">Jira</span>
-                        <span class="badge-tech">Docker</span>
+                        <span class="badge-tech">Linux</span>
+                        <span class="badge-tech">Windows</span>
                     </div>
                 </div>
 
-                <!-- Certifications & OS -->
                 <div class="glass-card p-6 rounded-2xl">
-                    <h4 class="text-yellow-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-certificate"></i> Certifications & OS</h4>
+                    <h4 class="text-yellow-400 font-bold mb-4 flex items-center gap-2"><i class="fas fa-certificate"></i> Certifications</h4>
                     <div class="flex flex-wrap gap-2">
-                        <span class="badge-tech text-yellow-200">Microsoft AZ-900 Certification</span>
-                        <span class="badge-tech">Linux</span>
-                        <span class="badge-tech">Windows</span>
-                        <span class="badge-tech">Data Visualization</span>
-                        
+                        <span class="badge-tech-accent">Microsoft AZ-900 (Azure Fundamentals)</span>
                     </div>
                 </div>
             </div>
@@ -241,34 +350,27 @@
         <section id="experience">
             <h2 class="text-3xl font-bold mb-12 text-white">Professional Journey</h2>
             <div class="space-y-16">
+
                 <!-- Research Assistant -->
                 <div class="relative pl-10 timeline-border">
-                    <div class="absolute -left-[11px] top-0 w-5 h-5 bg-blue-500 rounded-full border-4 border-slate-950"></div>
+                    <div class="absolute -left-[11px] top-0 w-5 h-5 bg-blue-500 rounded-full border-4 border-slate-950 glow-blue"></div>
                     <div class="flex flex-col md:flex-row justify-between mb-6">
                         <div>
                             <h3 class="text-2xl font-bold text-white">Research Assistant</h3>
-                            <p class="text-blue-400 font-medium">Binghamton University | Binghamton, NY</p>
+                            <p class="text-blue-400 font-medium">Binghamton University · Binghamton, NY</p>
                         </div>
-                        <span class="text-slate-500 font-medium mt-1">Dec 2024 – Present</span>
+                        <span class="text-slate-500 font-medium mt-1 mono text-sm">Dec 2024 – Present</span>
                     </div>
-                    <ul class="grid md:grid-cols-2 gap-4 text-slate-400 text-sm">
-                        <li class="glass-card p-4 rounded-xl flex gap-3">
-                            <i class="fas fa-microchip text-blue-400"></i>
-                            <span>Developing data acquisition software for units to collect sensor data for processor thermal cooling tests.</span>
-                        </li>
-                        <li class="glass-card p-4 rounded-xl flex gap-3">
-                            <i class="fas fa-network-wired text-blue-400"></i>
-                            <span>Managing device integration: verifying/assigning MAC addresses and ensuring DHCP protocol compliance.</span>
-                        </li>
-                        <li class="glass-card p-4 rounded-xl flex gap-3">
-                            <i class="fas fa-box text-blue-400"></i>
-                            <span>Comprehensive inventory management and rack building (processors, cooling mechanisms, and sensors).</span>
-                        </li>
-                        <li class="glass-card p-4 rounded-xl flex gap-3">
-                            <i class="fas fa-stream text-blue-400"></i>
-                            <span>Streaming sensor data solutions using Apache Kafka and Python.</span>
-                        </li>
-                    </ul>
+                    <div class="glass-card p-6 rounded-2xl border-l-4 border-blue-500">
+                        <h4 class="text-lg font-bold text-white mb-2">Real-Time Thermal Cooling Data Acquisition System</h4>
+                        <p class="text-slate-400 text-sm mb-4">Replacing a proprietary <span class="text-white">LabVIEW</span> system with an open-source Python stack, eliminating high licensing costs while improving observability.</p>
+                        <ul class="grid md:grid-cols-2 gap-3 text-xs text-slate-400">
+                            <li class="flex gap-2"><i class="fas fa-microchip text-blue-400 mt-1"></i><span>Integrating <b class="text-white">350+ process sensors</b> across data center server racks via PyVISA instrument communication.</span></li>
+                            <li class="flex gap-2"><i class="fas fa-desktop text-blue-400 mt-1"></i><span>Building a <b class="text-white">PySide6 GUI</b> with PyQtGraph live visualization for engineers monitoring thermal tests.</span></li>
+                            <li class="flex gap-2"><i class="fas fa-bell text-blue-400 mt-1"></i><span>Engineered <b class="text-white">threshold-based alarms</b> and structured logging for production-grade reliability.</span></li>
+                            <li class="flex gap-2"><i class="fas fa-stream text-blue-400 mt-1"></i><span>Streaming sensor data via <b class="text-white">Apache Kafka</b> for downstream analytics.</span></li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- LTIMindtree -->
@@ -277,38 +379,77 @@
                     <div class="flex flex-col md:flex-row justify-between mb-8">
                         <div>
                             <h3 class="text-2xl font-bold text-white">Senior Data Engineer</h3>
-                            <p class="text-slate-400 font-medium">LTIMINDTREE | Pune, India</p>
+                            <p class="text-slate-400 font-medium">LTIMindtree · Pune, India</p>
                         </div>
-                        <span class="text-slate-500 font-medium mt-1">Dec 2020 – June 2024</span>
+                        <span class="text-slate-500 font-medium mt-1 mono text-sm">Dec 2020 – Jun 2024</span>
                     </div>
-                    
+
                     <div class="space-y-6">
                         <!-- Project 1 -->
                         <div class="glass-card p-6 rounded-2xl border-l-4 border-green-500">
-                            <h4 class="text-lg font-bold text-white mb-2">Inventory Utilization Tracker</h4>
-                            <p class="text-slate-400 text-sm mb-4">Spearheaded the tracker contributing to <span class="text-green-400 font-bold">€0.1 million profit</span> in the first year.</p>
-                            <ul class="list-disc list-inside text-xs text-slate-500 space-y-1">
-                                <li>Designed end-to-end ETL pipelines and Power BI reports for supply chain management.</li>
-                                <li>Developed SQL views/procedures for metric calculations and KPI feeding.</li>
-                            </ul>
+                            <div class="flex items-start justify-between mb-2 flex-wrap gap-2">
+                                <h4 class="text-lg font-bold text-white">Cross-Factory Supply Chain Warehouse</h4>
+                                <span class="text-green-400 font-bold mono text-sm">$110K+ year-one profit</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-4">
+                                Architected a cross-factory data warehousing platform processing <b class="text-white">10M+ daily records</b> from <b class="text-white">40+ sources</b>. Replaced 8-10s QAD reports with <b class="text-white">sub-2 second Power BI dashboards</b> for 20+ users, unlocking better product phase-out decisions and overstocking prevention.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="badge-tech">SSIS</span>
+                                <span class="badge-tech">Azure SQL</span>
+                                <span class="badge-tech">Power BI</span>
+                                <span class="badge-tech">Star Schema</span>
+                            </div>
                         </div>
+
                         <!-- Project 2 -->
-                        <div class="glass-card p-6 rounded-2xl border-l-4 border-blue-500">
-                            <h4 class="text-lg font-bold text-white mb-2">Application Service Delivery</h4>
-                            <p class="text-slate-400 text-sm mb-4">Optimized heavy ETL pipelines, reducing runtimes by <span class="text-blue-400 font-bold">60%</span> for timely delivery.</p>
-                            <ul class="list-disc list-inside text-xs text-slate-500 space-y-1">
-                                <li>Automated workflows with cleansing, event logging, and flow monitoring.</li>
-                                <li>Maintained 100% SLA adherence through bug fixes and feature development.</li>
-                            </ul>
-                        </div>
-                        <!-- Project 3 -->
                         <div class="glass-card p-6 rounded-2xl border-l-4 border-purple-500">
-                            <h4 class="text-lg font-bold text-white mb-2">Environment Sustainability Governance</h4>
-                            <p class="text-slate-400 text-sm mb-4">Facilitated a <span class="text-purple-400 font-bold">14% reduction in payable taxes</span> via waste calculation tools.</p>
-                            <ul class="list-disc list-inside text-xs text-slate-500 space-y-1">
-                                <li>Built ETL pipelines integrating diverse sources for sustainability reporting.</li>
-                                <li>Engineered SQL business logic for complex waste calculation measures.</li>
-                            </ul>
+                            <div class="flex items-start justify-between mb-2 flex-wrap gap-2">
+                                <h4 class="text-lg font-bold text-white">ESG Reporting &amp; Tax Optimization</h4>
+                                <span class="text-purple-400 font-bold mono text-sm">$2.2M+ annual savings · 14% ↓</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-4">
+                                Engineered an ESG reporting system processing <b class="text-white">500K+ daily records</b> via SQL, SSIS, and BOM-to-emissions logic. Lowered tax liability by 14% by calculating per-product taxable waste, used to dispute government levy estimates.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="badge-tech">SSIS</span>
+                                <span class="badge-tech">T-SQL</span>
+                                <span class="badge-tech">Stored Procedures</span>
+                                <span class="badge-tech">BOM Logic</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="glass-card p-6 rounded-2xl border-l-4 border-blue-500">
+                            <div class="flex items-start justify-between mb-2 flex-wrap gap-2">
+                                <h4 class="text-lg font-bold text-white">ETL Performance Optimization</h4>
+                                <span class="text-blue-400 font-bold mono text-sm">60-75% runtime cut · 100% SLA</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-4">
+                                Optimized ETL pipelines across <b class="text-white">10+ applications</b> using delta load mechanisms and database tuning (indexing, partitioning, query optimization). Cut average runtime by 60-75% while maintaining <b class="text-white">100% SLA adherence for 200+ business users</b>.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="badge-tech">Delta Loads</span>
+                                <span class="badge-tech">Query Tuning</span>
+                                <span class="badge-tech">Indexing</span>
+                                <span class="badge-tech">Partitioning</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="glass-card p-6 rounded-2xl border-l-4 border-yellow-500">
+                            <div class="flex items-start justify-between mb-2 flex-wrap gap-2">
+                                <h4 class="text-lg font-bold text-white">Pipeline Observability Platform</h4>
+                                <span class="text-yellow-400 font-bold mono text-sm">80% manual effort eliminated</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-4">
+                                Built automated <b class="text-white">Power BI observability dashboards</b> displaying real-time pipeline status, failures, and logs, replacing manual monitoring scripts across a 10-person support team.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="badge-tech">Power BI</span>
+                                <span class="badge-tech">Event Logging</span>
+                                <span class="badge-tech">Flow Monitoring</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -317,71 +458,166 @@
 
         <!-- Projects Showcase -->
         <section id="projects">
-            <h2 class="text-3xl font-bold mb-12 text-center text-white">Engineering Portfolios</h2>
+            <h2 class="text-3xl font-bold mb-4 text-center text-white">Featured Engineering Portfolios</h2>
+            <p class="text-slate-500 text-center mb-12 max-w-2xl mx-auto">Production-grade systems built end-to-end, from ingestion through ML serving.</p>
+
             <div class="space-y-12">
-                <!-- Project 1: NYC Taxi -->
-                <div class="glass-card rounded-3xl overflow-hidden grid md:grid-cols-5 items-center">
-                    <div class="md:col-span-3 p-4 bg-slate-900/50 flex items-center justify-center min-h-[300px]">
-                        <div class="text-center p-6 border border-white/5 rounded-2xl bg-slate-900">
-                            <h4 class="text-xs uppercase tracking-[0.2em] text-blue-500 font-bold mb-6 italic">Architecture Preview</h4>
-                            <div class="flex items-center justify-center gap-4 text-slate-400">
-                                <div class="p-3 border border-slate-700 rounded bg-slate-800">S3</div>
-                                <i class="fas fa-arrow-right text-xs"></i>
-                                <div class="p-3 border border-blue-800 rounded bg-blue-900/20 text-blue-300">Databricks</div>
-                                <i class="fas fa-arrow-right text-xs"></i>
-                                <div class="p-3 border border-purple-800 rounded bg-purple-900/20 text-purple-300">Snowflake</div>
-                                <i class="fas fa-arrow-right text-xs"></i>
-                                <div class="p-3 border border-yellow-800 rounded bg-yellow-900/20 text-yellow-300">Power BI</div>
+
+                <!-- Project 1: NYC Taxi Analytics + EV Intelligence -->
+                <div class="glass-card rounded-3xl overflow-hidden">
+                    <!-- Header band -->
+                    <div class="p-8 md:p-10 border-b border-white/5 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-green-500/5">
+                        <div class="flex flex-wrap items-center gap-3 mb-4">
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">Featured · Production-Grade</span>
+                            <span class="text-xs px-3 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400 font-semibold">Lakehouse + ML + Spatial</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-3">NYC Taxi Analytics Platform <span class="text-gradient-ev">+ EV Intelligence</span></h3>
+                        <p class="text-slate-400 leading-relaxed max-w-4xl">
+                            End-to-end <b>Medallion Architecture</b> processing <b class="text-white">200M+ historical</b> and <b class="text-white">4M+ daily</b> NYC taxi trips on Databricks + Delta Lake. On top of the warehouse, I built a <b class="text-white">machine learning recommendation engine for EV taxi drivers</b> and a <b class="text-white">spatial coverage tool for fleet operators &amp; city planners</b>, projected to deliver an <b class="text-green-400">8-15% revenue lift</b> through demand forecasting, surge pricing, and intelligent repositioning.
+                        </p>
+                    </div>
+
+                    <!-- Architecture preview -->
+                    <div class="p-8 md:p-10 bg-slate-900/40 border-b border-white/5">
+                        <h4 class="text-xs uppercase tracking-[0.2em] text-blue-500 font-bold mb-6">Architecture Preview</h4>
+                        <div class="space-y-4">
+                            <!-- Top row: Data flow -->
+                            <div class="flex flex-wrap items-center justify-center gap-3 text-slate-400">
+                                <div class="arch-node border-slate-700 bg-slate-800 text-slate-300">S3 (Raw)</div>
+                                <i class="fas fa-arrow-right text-xs text-slate-600"></i>
+                                <div class="arch-node border-blue-700 bg-blue-900/20 text-blue-300">Databricks · PySpark</div>
+                                <i class="fas fa-arrow-right text-xs text-slate-600"></i>
+                                <div class="arch-node border-blue-700 bg-blue-900/20 text-blue-300">Delta Lake (Bronze→Silver→Gold)</div>
+                                <i class="fas fa-arrow-right text-xs text-slate-600"></i>
+                                <div class="arch-node border-purple-700 bg-purple-900/20 text-purple-300">Snowflake (Snowpipe)</div>
+                                <i class="fas fa-arrow-right text-xs text-slate-600"></i>
+                                <div class="arch-node border-yellow-700 bg-yellow-900/20 text-yellow-300">Power BI</div>
+                            </div>
+                            <!-- Branch indicator -->
+                            <div class="flex justify-center">
+                                <div class="text-slate-600 text-xs flex items-center gap-2">
+                                    <i class="fas fa-level-down-alt rotate-90"></i>
+                                    <span class="uppercase tracking-widest">EV Intelligence Layer</span>
+                                    <i class="fas fa-level-down-alt rotate-90"></i>
+                                </div>
+                            </div>
+                            <!-- Bottom row: ML / EV layer -->
+                            <div class="flex flex-wrap items-center justify-center gap-3 text-slate-400">
+                                <div class="arch-node border-green-700 bg-green-900/20 text-green-300">H3 Spatial Index</div>
+                                <i class="fas fa-plus text-xs text-slate-600"></i>
+                                <div class="arch-node border-green-700 bg-green-900/20 text-green-300">XGBoost Trees</div>
+                                <i class="fas fa-arrow-right text-xs text-slate-600"></i>
+                                <div class="arch-node border-cyan-700 bg-cyan-900/20 text-cyan-300">FastAPI · 682K+ recs</div>
+                                <i class="fas fa-arrow-right text-xs text-slate-600"></i>
+                                <div class="arch-node border-pink-700 bg-pink-900/20 text-pink-300">Streamlit · PyDeck</div>
                             </div>
                         </div>
                     </div>
-                    <div class="md:col-span-2 p-8 md:p-12">
-                        <div class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-4">Production-Ready Pipeline</div>
-                        <h3 class="text-3xl font-bold mb-6 text-white">NYC Taxi Analytics Platform</h3>
-                        <p class="text-slate-400 mb-8 leading-relaxed text-sm">
-                            Implementation of a modern <b>Lakehouse architecture</b>. Features incremental date-driven ingestion using Databricks/Spark, automated Snowflake ingestion with <b>Snowpipe</b>, and business-ready dashboards.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-8">
-                            <span class="badge-tech">Medallion Arch</span>
-                            <span class="badge-tech">Delta Lake</span>
-                            <span class="badge-tech">Snowflake Streams</span>
-                            <span class="badge-tech">PySpark</span>
+
+                    <!-- Sub-feature cards -->
+                    <div class="p-8 md:p-10 grid md:grid-cols-3 gap-6">
+                        <!-- Lakehouse -->
+                        <div class="bg-slate-900/60 border border-white/5 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fas fa-database text-blue-400"></i>
+                                <h5 class="font-bold text-white">Lakehouse Pipeline</h5>
+                            </div>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Production Medallion Architecture with idempotent date-driven ingestion. Sub-6-minute end-to-end load. Automated Snowflake warehouse ingestion via Snowpipe + Streams.</p>
+                            <ul class="text-xs text-slate-500 space-y-1.5">
+                                <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-0.5 text-[10px]"></i> 200M+ historical, 4M+ daily trips</li>
+                                <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-0.5 text-[10px]"></i> Sub-6-min E2E load</li>
+                                <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-0.5 text-[10px]"></i> Idempotent + backfill-friendly</li>
+                            </ul>
                         </div>
-                        <a href="https://github.com/adb-21/NYC-taxi-analysis" target="_blank" class="text-blue-400 font-bold group flex items-center gap-2">
-                            View Codebase <i class="fas fa-arrow-right transition-transform group-hover:translate-x-2"></i>
-                        </a>
+
+                        <!-- EV Recommendation Engine -->
+                        <div class="bg-slate-900/60 border border-green-500/20 rounded-2xl p-6 glow-green">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fas fa-bolt text-green-400"></i>
+                                <h5 class="font-bold text-white">EV Recommendation Engine</h5>
+                            </div>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">ML-powered repositioning recommendations for EV taxi drivers, built to tackle deadheading. H3 spatial indexing + XGBoost trees, served as low-latency precomputed lookups.</p>
+                            <ul class="text-xs text-slate-500 space-y-1.5">
+                                <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-0.5 text-[10px]"></i> 682K+ recs served via FastAPI</li>
+                                <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-0.5 text-[10px]"></i> H3 hex grid + XGBoost</li>
+                                <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-0.5 text-[10px]"></i> Data-driven repositioning</li>
+                            </ul>
+                        </div>
+
+                        <!-- EV Charger Coverage -->
+                        <div class="bg-slate-900/60 border border-cyan-500/20 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fas fa-charging-station text-cyan-400"></i>
+                                <h5 class="font-bold text-white">EV Charger Coverage Tool</h5>
+                            </div>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Spatial analysis dashboard mapping EV charger coverage across high-demand zones. Surfaces actionable infrastructure investment signals for fleet operators and city planners.</p>
+                            <ul class="text-xs text-slate-500 space-y-1.5">
+                                <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-0.5 text-[10px]"></i> Streamlit + PyDeck heatmaps</li>
+                                <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-0.5 text-[10px]"></i> Demand × charger overlay</li>
+                                <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-0.5 text-[10px]"></i> Investment signal surfacing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tech badges + repos -->
+                    <div class="p-8 md:p-10 pt-0">
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="badge-tech">Databricks</span>
+                            <span class="badge-tech">PySpark</span>
+                            <span class="badge-tech">Delta Lake</span>
+                            <span class="badge-tech">Snowflake</span>
+                            <span class="badge-tech">Snowpipe / Streams</span>
+                            <span class="badge-tech">Spark MLlib</span>
+                            <span class="badge-tech">XGBoost</span>
+                            <span class="badge-tech">H3</span>
+                            <span class="badge-tech">FastAPI</span>
+                            <span class="badge-tech">Streamlit</span>
+                            <span class="badge-tech">PyDeck</span>
+                            <span class="badge-tech">AWS S3</span>
+                        </div>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://github.com/adb-21/NYC-taxi-analysis" target="_blank" rel="noopener" class="text-blue-400 font-bold group flex items-center gap-2 px-4 py-2 rounded-xl border border-blue-500/30 hover:bg-blue-500/10 transition-all text-sm">
+                                <i class="fab fa-github"></i> Lakehouse Repo <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1 text-xs"></i>
+                            </a>
+                            <a href="https://github.com/adb-21/NYC-ev-taxi-intelligence" target="_blank" rel="noopener" class="text-green-400 font-bold group flex items-center gap-2 px-4 py-2 rounded-xl border border-green-500/30 hover:bg-green-500/10 transition-all text-sm">
+                                <i class="fab fa-github"></i> EV Intelligence Repo <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1 text-xs"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project 2: Kafka -->
+                <!-- Project 2: Real-Time Sales Pipeline -->
                 <div class="glass-card rounded-3xl overflow-hidden grid md:grid-cols-5 items-center">
                     <div class="md:col-span-3 p-1">
                         <div class="bg-slate-900 rounded-2xl p-6 h-full flex items-center justify-center">
                             <div class="text-center">
-                                <div class="flex justify-center gap-6 mb-8">
+                                <div class="flex justify-center items-center gap-6 mb-8">
                                     <i class="fab fa-python text-5xl text-blue-400"></i>
-                                    <i class="fas fa-exchange-alt text-3xl text-slate-600 mt-2"></i>
+                                    <i class="fas fa-arrow-right text-2xl text-slate-600"></i>
+                                    <div class="px-4 py-2 border border-orange-700 rounded bg-orange-900/20 text-orange-300 text-xs font-bold">Kafka on EC2</div>
+                                    <i class="fas fa-arrow-right text-2xl text-slate-600"></i>
                                     <i class="fab fa-aws text-5xl text-orange-400"></i>
                                 </div>
                                 <div class="p-4 bg-slate-800 rounded-lg border border-white/5 inline-block">
-                                    <span class="text-xs uppercase tracking-widest text-slate-500">Dataflow Pipeline Architecture</span>
+                                    <span class="text-xs uppercase tracking-widest text-slate-500">Real-Time Sales Ingestion · 5 Countries</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="md:col-span-2 p-8 md:p-12">
                         <div class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-4">Real-time Streaming</div>
-                        <h3 class="text-3xl font-bold mb-6 text-white">Product Sale Dataflow Pipeline</h3>
-                        <p class="text-slate-400 mb-8 leading-relaxed text-sm">
-                            Engineered a scalable ELT pipeline streaming millions of daily records in real-time. Built for efficiency, achieving <span class="text-white">less than $4/day</span> operational cost using AWS DynamoDB.
+                        <h3 class="text-3xl font-bold mb-6 text-white">Real-Time Sales Ingestion Pipeline</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed text-sm">
+                            Engineered a real-time ingestion pipeline streaming sales data across <b class="text-white">5 countries</b> through Apache Kafka on AWS EC2. Consumer batch processing + Airflow-orchestrated workflows achieve <b class="text-white">sub-$4/day cloud infrastructure cost</b>, designed for small retail business entities.
                         </p>
-                        <div class="flex flex-wrap gap-3 mb-8">
-                            <span class="badge-tech">Kafka</span>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="badge-tech">Apache Kafka</span>
                             <span class="badge-tech">AWS EC2</span>
-                            <span class="badge-tech">Airflow</span>
+                            <span class="badge-tech">AWS S3</span>
                             <span class="badge-tech">DynamoDB</span>
+                            <span class="badge-tech">Apache Airflow</span>
                         </div>
-                        <a href="https://github.com/adb-21/DE-Project1" target="_blank" class="text-blue-400 inline-flex items-center gap-2 font-bold group">
+                        <a href="https://github.com/adb-21/DE-Project1" target="_blank" rel="noopener" class="text-blue-400 inline-flex items-center gap-2 font-bold group">
                             View Codebase
                             <i class="fas fa-arrow-right text-blue-400 group-hover:translate-x-2 transition-transform"></i>
                         </a>
@@ -396,19 +632,23 @@
                 <div class="absolute inset-0 bg-blue-500/5 -z-10 blur-[100px]"></div>
                 <h2 class="text-4xl font-extrabold mb-4 text-white">Ready for the next data challenge.</h2>
                 <p class="text-slate-400 text-lg max-w-xl mx-auto mb-10">
-                    Looking to collaborate on production pipelines, cloud migrations, or hardware-aware data systems.
+                    Looking to collaborate on production lakehouses, real-time pipelines, ML platforms, or data-driven product engineering.
                 </p>
-                <div class="flex flex-wrap justify-center gap-6">
+                <div class="flex flex-wrap justify-center gap-4">
                     <a href="mailto:aakashbartakke21@gmail.com" class="bg-white text-slate-950 px-8 py-4 rounded-2xl font-bold hover:bg-blue-400 transition-colors flex items-center gap-3">
                         <i class="fas fa-paper-plane"></i> Email Me
                     </a>
-                    <a href="https://www.linkedin.com/in/aakash-bartakke" target="_blank" class="bg-slate-800 text-white px-8 py-4 rounded-2xl font-bold hover:bg-slate-700 transition-colors flex items-center gap-3">
+                    <a href="https://www.linkedin.com/in/aakash-bartakke" target="_blank" rel="noopener" class="bg-slate-800 text-white px-8 py-4 rounded-2xl font-bold hover:bg-slate-700 transition-colors flex items-center gap-3">
                         <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/adb-21" target="_blank" rel="noopener" class="bg-slate-800 text-white px-8 py-4 rounded-2xl font-bold hover:bg-slate-700 transition-colors flex items-center gap-3">
+                        <i class="fab fa-github"></i> GitHub
                     </a>
                 </div>
                 <div class="mt-12 text-slate-500 flex flex-col md:flex-row justify-center gap-8 text-sm">
                     <span><i class="fas fa-phone mr-2 text-blue-400"></i> (607) 338-8761</span>
                     <span><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i> Binghamton, NY</span>
+                    <span><i class="fas fa-envelope mr-2 text-blue-400"></i> aakashbartakke21@gmail.com</span>
                 </div>
             </div>
         </section>
@@ -416,7 +656,7 @@
     </main>
 
     <footer class="py-10 border-t border-white/5 text-center text-slate-500 text-xs uppercase tracking-widest">
-        <p>&copy; 2025 Aakash Bartakke • Designed for Scalability & Performance</p>
+        <p>&copy; 2026 Aakash Bartakke · Designed for Scalability &amp; Performance</p>
     </footer>
 
 </body>
